@@ -1,5 +1,7 @@
 package es.ulpgc.eite.cleancode.helloworld.hello;
 
+import android.content.Intent;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.helloworld.app.AppMediator;
@@ -75,6 +77,10 @@ public class HelloPresenter implements HelloContract.Presenter {
 
   private void navigateToByeScreen() {
     //TODO: no implemented
+    //Intent intent = new Intent(this, SecondActivity.class);
+    //    startActivity(intent);
+
+
   }
 
   @Override
