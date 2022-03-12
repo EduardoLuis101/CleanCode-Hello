@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import es.ulpgc.eite.cleancode.helloworld.R;
+import es.ulpgc.eite.cleancode.helloworld.hello.HelloActivity;
 import es.ulpgc.eite.cleancode.helloworld.hello.HelloContract;
 import es.ulpgc.eite.cleancode.helloworld.hello.HelloViewModel;
 
@@ -52,10 +53,10 @@ public class ByeActivity
 
     @Override
     public void displayByeData(ByeViewModel viewModel) {
-        Log.e(TAG, "displayHelloData()");
+        Log.e(TAG, "displayByeData()");
 
         // deal with the data
-        byeMessage.setText(viewModel.data);
+        byeMessage.setText(viewModel.byeMessage);
     }
 
     private String getGoHelloButtonLabel() {
@@ -101,13 +102,19 @@ public class ByeActivity
         //Log.e(TAG, "onDataUpdated()");
 
         // deal with the data
-        ((TextView) findViewById(R.id.byeMessage)).setText(viewModel.data);
+        ((TextView) findViewById(R.id.byeMessage)).setText(viewModel.byeMessage);
     }
 
 
     @Override
     public void navigateToNextScreen() {
         Intent intent = new Intent(this, ByeActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void navigateToHelloScreen() {
+        Intent intent = new Intent(this, HelloActivity.class);
         startActivity(intent);
     }
 

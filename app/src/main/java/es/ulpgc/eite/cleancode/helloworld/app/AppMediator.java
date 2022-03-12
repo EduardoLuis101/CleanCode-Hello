@@ -10,11 +10,6 @@ public class AppMediator {
 
   private HelloToByeState helloToByeState;
   private ByeToHelloState byeToHelloState;
-  private NextToByeState nextToByeState;
-  private PreviousToByeState previousToByeState;
-  private ByeToNextState byeToNextState;
-  private ByeToPreviousState byeToPreviousState;
-
 
   private static AppMediator INSTANCE;
 
@@ -64,23 +59,5 @@ public class AppMediator {
     this.byeToHelloState = state;
   }
 
-  public NextToByeState getNextByeScreenState() {
-    NextToByeState state = nextToByeState;
-    nextToByeState = null;
-    return state;
-  }
 
-  public PreviousToByeState getPreviousByeScreenState() {
-    PreviousToByeState state = previousToByeState;
-    previousToByeState = null;
-    return state;
-  }
-
-  public void setNextByeScreenState(ByeToNextState state) {
-    this.byeToNextState = state;
-  }
-
-  public void setPreviousByeScreenState(ByeToPreviousState state) {
-    this.byeToPreviousState = state;
-  }
 }

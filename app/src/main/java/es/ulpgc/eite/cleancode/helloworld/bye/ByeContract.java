@@ -12,6 +12,8 @@ public interface ByeContract {
         void onDataUpdated(ByeViewModel viewModel);
 
         void navigateToNextScreen();
+
+        void navigateToHelloScreen();
     }
 
     interface Presenter {
