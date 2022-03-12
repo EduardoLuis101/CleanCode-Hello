@@ -5,6 +5,7 @@ import java.lang.ref.WeakReference;
 import es.ulpgc.eite.cleancode.helloworld.app.AppMediator;
 import es.ulpgc.eite.cleancode.helloworld.app.ByeToNextState;
 import es.ulpgc.eite.cleancode.helloworld.app.ByeToPreviousState;
+import es.ulpgc.eite.cleancode.helloworld.app.HelloToByeState;
 import es.ulpgc.eite.cleancode.helloworld.app.NextToByeState;
 import es.ulpgc.eite.cleancode.helloworld.app.PreviousToByeState;
 
@@ -33,7 +34,7 @@ public class ByePresenter implements ByeContract.Presenter {
         state.data = model.getStoredData();
 
         // use passed state if is necessary
-        PreviousToByeState savedState = getStateFromPreviousScreen();
+        HelloToByeState savedState = getStateFromHelloScreen();
         if (savedState != null) {
 
             // update the model if is necessary
@@ -68,7 +69,7 @@ public class ByePresenter implements ByeContract.Presenter {
         }
 
         // call the model and update the state
-        //state.data = model.getStoredData();
+        state.data = model.getStoredData();
 
         // update the view
         view.get().onDataUpdated(state);
@@ -90,6 +91,16 @@ public class ByePresenter implements ByeContract.Presenter {
         // Log.e(TAG, "onDestroy()");
     }
 
+    @Override
+    public void sayByeButtonClicked() {
+
+    }
+
+    @Override
+    public void goHelloButtonClicked() {
+
+    }
+
     private NextToByeState getStateFromNextScreen() {
         return mediator.getNextByeScreenState();
     }
@@ -104,6 +115,10 @@ public class ByePresenter implements ByeContract.Presenter {
 
     private PreviousToByeState getStateFromPreviousScreen() {
         return mediator.getPreviousByeScreenState();
+    }
+
+    private HelloToByeState getStateFromHelloScreen(){
+        return mediator.getHelloToByeState();
     }
 
     @Override

@@ -8,6 +8,8 @@ public interface HelloContract {
     void injectPresenter(Presenter presenter);
 
     void displayHelloData(HelloViewModel viewModel);
+
+      void navigateToByeScreen();
   }
 
   interface Presenter {

@@ -7,6 +7,8 @@ public interface ByeContract {
     interface View {
         void injectPresenter(Presenter presenter);
 
+        void displayByeData(ByeViewModel viewModel);
+
         void onDataUpdated(ByeViewModel viewModel);
 
         void navigateToNextScreen();
@@ -28,6 +30,10 @@ public interface ByeContract {
         void onPause();
 
         void onDestroy();
+
+        void sayByeButtonClicked();
+
+        void goHelloButtonClicked();
     }
 
     interface Model {
