@@ -43,12 +43,12 @@ public class ByeActivity
         // do the setup
         ByeScreen.configure(this);
 
-        /*if (savedInstanceState == null) {
+        if (savedInstanceState == null) {
             presenter.onStart();
 
         } else {
             presenter.onRestart();
-        }*/
+        }
     }
 
     @Override

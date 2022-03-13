@@ -1,5 +1,7 @@
 package es.ulpgc.eite.cleancode.helloworld.bye;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.helloworld.app.AppMediator;
@@ -32,6 +34,7 @@ public class ByePresenter implements ByeContract.Presenter {
 
         // use passed state if is necessary
         HelloToByeState savedState = getStateFromHelloScreen();
+        Log.e("Eu", savedState.message);
         if (savedState != null) {
 
             // update the model if is necessary

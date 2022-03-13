@@ -24,6 +24,7 @@ public class ByeModel implements ByeContract.Model {
     @Override
     public void onDataFromNextScreen(String data) {
         // Log.e(TAG, "onDataFromNextScreen()");
+        this.data = data;
     }
 
     @Override
